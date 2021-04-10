@@ -1,0 +1,119 @@
+.common-manage{
+  display flex
+  flex-direction column
+  height 100%
+  position relative
+}
+.error-label{
+  color: $color-error-font;
+  font-size: 12px;
+  line-height: 1;
+  padding-top: 4px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+.el-input-error{
+  .el-input__inner{
+    border-color: $color-error-font
+  }
+}
+.user-user-group{
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #ffffff !important;
+  .user-group-list{
+    height: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    overflow-y: auto;
+    .user-group-title{
+      font-size: 20px;
+      font-weight: 600;
+      padding: 10px 20px;
+      box-sizing: border-box;
+      background: #EAEEF4;
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+    .group-name-content{
+      font-size: 16px;
+      cursor: pointer;
+      height: 30px;
+      padding: 10px 20px 0 20px;
+    }
+    .group-name-content:hover{
+      background: #ffffff;
+    }
+    .group-name-selected{
+      background: #ffffff;
+    }
+  }
+  .user-group-detail{
+    flex-grow: 1;
+    /*padding: 10px;*/
+    box-sizing: border-box;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    .el-form{
+      .el-form-item{
+        margin-bottom: 20px !important;
+      }
+    }
+    .input-label{
+      position relative
+      .error-label{
+        color: #F56C6C;
+        font-size: 12px;
+        line-height: 1;
+        position: absolute;
+        top: 34px;
+        left: 0;
+      }
+    }
+    .el-input-error{
+      .el-input__inner{
+        border-color: #F56C6C
+      }
+    }
+    .user-group-detail-info{
+      min-height: 46px;
+      background: #EAEEF4;
+      display: flex;
+      flex-grow: 0;
+    }
+    .user-group-role-user{
+      box-sizing: border-box;
+      flex-grow: 1;
+      overflow-y: auto;
+      .group-title-content{
+        height: 30px;
+        width: 70px;
+        display: flex;
+        border-top-left-radius: 10px;
+        margin-right: 10px;
+        background: #EAEEF4;
+        border-top-right-radius: 10px;
+        cursor: pointer;
+        .group-title{
+          margin: auto;
+        }
+      }
+      .title-selected{
+        background: #409EFF;
+        color: #ffffff;
+      }
+      .el-table{
+        overflow-y: auto;
+      }
+      .el-button{
+        padding: 0;
+      }
+    }
+  }
+}
