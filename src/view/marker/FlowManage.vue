@@ -1,14 +1,14 @@
 <template>
   <div class="common-manage">
     <div class="search-condition-container" style="height: 140px;box-sizing: border-box">
-      <el-form label-position="left" label-width="70px">
+      <el-form label-position="left" label-width="80px">
         <el-row :gutter="20">
-          <el-col :span="8">
+          <el-col :span="6">
             <el-form-item label="商业">
               <el-input v-model="form.business" size="small" style="max-width: 215px" clearable placeholder="根据商业名称模糊搜索"></el-input>
             </el-form-item>
           </el-col>
-          <el-col :span="8">
+          <el-col :span="6">
             <el-form-item label="开始时间">
               <el-date-picker
                 size="small"
@@ -17,13 +17,17 @@
               </el-date-picker>
             </el-form-item>
           </el-col>
-          <el-col :span="8">
+          <el-col :span="6">
             <el-form-item label="结束时间">
               <el-date-picker
                 size="small"
                 v-model="form.endTime"
                 placeholder="选择结束时间">
               </el-date-picker>
+            </el-form-item>
+          </el-col>
+          <el-col :span="6">
+            <el-form-item label="数量总计:">{{count}}盒
             </el-form-item>
           </el-col>
         </el-row>
@@ -79,6 +83,7 @@
           </template>
         </el-table-column>
       </el-table>
+
     </div>
     <common-pagination :pages="form" @loadData="loadData"></common-pagination>
   </div>
@@ -97,6 +102,7 @@ export default {
       medicines: [],
       data: [],
       departments: [],
+      count: '',
       user: JSON.parse(sessionStorage.getItem('user')),
       drugstores: [] // 药店
     }
@@ -117,8 +123,9 @@ export default {
       }
       let url = '/sell/salesVolume/directSaleClient/list'
       this.$http.get(url, this.form, res => {
-        this.data = res.data.list
-        this.form.total = res.data.total
+        this.data = res.data.directSaleClientList.list
+        this.form.total = res.data.directSaleClientList.total
+        this.count = res.data.count
       })
     },
     loadMedicines () {

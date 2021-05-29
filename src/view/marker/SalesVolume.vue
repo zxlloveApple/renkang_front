@@ -66,7 +66,7 @@
               </el-select>
             </el-form-item>
           </el-col>
-          <el-col :span="12" style="margin-top: 4px">
+          <el-col :span="8" style="margin-top: 4px">
             <el-button size="small" type="primary" @click="loadSalesVolumes">搜索</el-button>
             <el-button size="small" type="success" @click="openDialog">添加销量</el-button>
             <el-button size="small" type="success" @click="exportResult">导出当前结果</el-button>

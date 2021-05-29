@@ -67,20 +67,23 @@
         <el-form-item label="对应Link药店" prop="linkDrugstore">
           <el-input size="small" v-model="customerInfo.linkDrugstore" clearable></el-input>
         </el-form-item>
-        <el-form-item label="所属公司/自然人" prop="companyName">
+        <el-form-item label="合作形式" prop="linkDrugstore">
+          <el-input size="small" v-model="customerInfo.cooperation" clearable></el-input>
+        </el-form-item>
+        <el-form-item label="所属公司名称/自然人" prop="companyName">
           <el-input size="small" v-model="customerInfo.companyName" clearable></el-input>
         </el-form-item>
         <el-form-item label="在公司任职职位" prop="position">
           <el-input size="small" v-model="customerInfo.position" clearable></el-input>
         </el-form-item>
         <el-form-item label="所属公司性质" prop="companyNature">
-          <el-input size="small" v-model="customerInfo.companyNature" clearable></el-input>
+          <el-input size="small" v-model="customerInfo.companyNature" clearable placeholder="直营/分销"></el-input>
         </el-form-item>
         <el-form-item label="学术推广能力" prop="companyName">
-          <el-input size="small" v-model="customerInfo.promotionAbility" type="textarea" clearable></el-input>
+          <el-input size="small" v-model="customerInfo.promotionAbility" type="textarea" clearable  placeholder="是否有专业学术推广团队及学术推广人员数量"></el-input>
         </el-form-item>
-        <el-form-item label="历史产品及销售情况" prop="history">
-          <el-input size="small" v-model="customerInfo.history" type="textarea" clearable></el-input>
+        <el-form-item label="既往操作产品及销售情况" prop="history">
+          <el-input size="small" v-model="customerInfo.history" type="textarea" clearable placeholder="既往操作产品及销售情况"></el-input>
         </el-form-item>
         <el-form-item label="预计年度销量/盒">
           <el-input size="small" v-model="customerInfo.annualSales" type="number" clearable placeholder="请输入数字"></el-input>

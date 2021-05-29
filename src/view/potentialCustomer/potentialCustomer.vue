@@ -80,11 +80,12 @@
           </template>
         </el-table-column>
         <el-table-column label="对应LINK药店" prop="linkDrugstore" width="120px"></el-table-column>
-        <el-table-column label="所属公司" prop="companyName" width="150px"></el-table-column>
-        <el-table-column label="任职" prop="position" width="150px"></el-table-column>
-        <el-table-column label="公司性质" prop="companyNature" width="120px"></el-table-column>
-        <el-table-column label="推广能力" prop="promotionAbility" width="200px"></el-table-column>
-        <el-table-column label="历史记录" prop="history" width="200px"></el-table-column>
+        <el-table-column label="合作形式" prop="cooperation" width="120px"></el-table-column>
+        <el-table-column label="所属公司名称/自然人" prop="companyName" width="150px"></el-table-column>
+        <el-table-column label="公司任职职位" prop="position" width="150px"></el-table-column>
+        <el-table-column label="所属公司性质" prop="companyNature" width="120px"></el-table-column>
+        <el-table-column label="学术推广能力" prop="promotionAbility" width="200px"></el-table-column>
+        <el-table-column label="既往操作产品及销售情况" prop="history" width="200px"></el-table-column>
         <el-table-column label="预计年销量" prop="annualSales" width="100px"></el-table-column>
         <el-table-column label="预计进院/店时间" prop="enterTime" width="150px">
           <template slot-scope="scope">

@@ -3,7 +3,7 @@
     <div class="search-condition-container" style="height: 140px;box-sizing: border-box">
       <el-form label-position="left" label-width="70px">
         <el-row :gutter="20">
-          <el-col :span="8">
+          <el-col :span="6">
             <el-form-item label="业务员">
               <el-select size="small" v-model="form.userId" filterable clearable>
                 <el-option label="全部" :value="null"></el-option>
@@ -11,7 +11,7 @@
               </el-select>
             </el-form-item>
           </el-col>
-          <el-col :span="8">
+          <el-col :span="6">
             <el-form-item label="开始月份">
               <el-date-picker
                 size="small"
@@ -21,7 +21,7 @@
               </el-date-picker>
             </el-form-item>
           </el-col>
-          <el-col :span="8">
+          <el-col :span="6">
             <el-form-item label="结束月份">
               <el-date-picker
                 size="small"
@@ -73,6 +73,7 @@
         <el-table-column label="进货" prop="purchaseAmount"></el-table-column>
         <el-table-column label="差值" prop="dvalue"></el-table-column>
         <el-table-column label="状态" fixed="right">
+<!--          销售总量 + 库存 - 开始月份的库存 - 进货-->
           <template slot-scope="scope">
             <span v-if="scope.row.dvalue === 0" style="color: #67c23a">吻合</span>
             <span v-if="scope.row.dvalue > 0" style="color: #f56c6c">销量超出进货</span>
