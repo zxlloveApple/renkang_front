@@ -72,6 +72,9 @@
             <el-button size="small" type="success" @click="exportResult">导出当前结果</el-button>
             <el-button size="small" v-if="isAdmin" type="danger" @click="lockAll">一键锁定</el-button>
           </el-col>
+          <el-col :span="4">
+            <div style="height: 40px;display: flex;align-items: center;font-size: 18px">销量总计：{{totalSum}}</div>
+          </el-col>
         </el-row>
       </el-form>
     </div>
@@ -138,7 +141,8 @@ export default {
       departments: [],
       userId: undefined,
       isAdmin: false,
-      drugstores: []
+      drugstores: [],
+      totalSum: 0
     }
   },
   mounted () {
@@ -172,8 +176,9 @@ export default {
       }
       let url = '/sell/salesVolume/selectSalesVolumeByPage'
       this.$http.get(url, param, res => {
-        this.form.total = res.data.total
-        this.salesVolumes = res.data.list
+        this.form.total = res.data.list.total
+        this.salesVolumes = res.data.list.list
+        this.totalSum = res.data.totalSum
       })
     },
     editSalesVolume (row) {

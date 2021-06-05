@@ -34,10 +34,11 @@
           </template>
         </el-table-column>
 
-        <el-table-column prop="" label="操作" width="160px">
+        <el-table-column prop="" label="操作" width="200px">
           <template slot-scope="scope">
             <el-button type="text" @click="editUser(scope.row)">修改</el-button>
             <el-button type="text" style="color: #f56c6c" @click="editPsd(scope.row)">重置密码</el-button>
+            <el-button type="text" style="color: #f56c6c" @click="delUser(scope.row)">删除</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -160,6 +161,20 @@ export default {
       } else {
         return ''
       }
+    },
+    delUser (row) {
+      this.$confirm('确定删除该用户吗？','提示',{
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        let url = '/base/sysUser/addUser'
+        row.status = false
+        this.$http.postJson(url,row,res => {
+          this.$message.success(res.message)
+          this.loadUsers()
+        })
+      }).catch(() => {})
     }
   }
 }

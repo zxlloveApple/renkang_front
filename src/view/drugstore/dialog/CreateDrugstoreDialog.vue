@@ -43,6 +43,11 @@
           <i class="el-icon-circle-plus icon-add" v-if="editRole && index === 0" @click="addRelation"></i>
         </div>
       </el-form-item>
+      <el-form-item label="关联医院" v-if="drugstore.drugstoreId">
+        <div v-for="(item, index) in drugstoreInfo.relHospitals" :key="index">
+          {{item.hospitalName}}
+        </div>
+      </el-form-item>
     </el-form>
     <div slot="footer">
       <el-button size="small" @click="close">取消</el-button>

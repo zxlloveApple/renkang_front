@@ -68,9 +68,9 @@
         <el-table-column label="药店" prop="drugstoreName" width="180px"></el-table-column>
         <el-table-column label="品种" prop="medicineName" width="180px"></el-table-column>
         <el-table-column label="前一个月库存" prop="forwardMonthStockVolume" width="120px"></el-table-column>
+        <el-table-column label="进货" prop="purchaseAmount"></el-table-column>
         <el-table-column label="销量" prop="salesVolume"></el-table-column>
         <el-table-column label="库存" prop="stockVolume"></el-table-column>
-        <el-table-column label="进货" prop="purchaseAmount"></el-table-column>
         <el-table-column label="差值" prop="dvalue"></el-table-column>
         <el-table-column label="状态" fixed="right">
 <!--          销售总量 + 库存 - 开始月份的库存 - 进货-->
