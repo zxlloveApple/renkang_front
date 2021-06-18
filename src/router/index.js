@@ -7,6 +7,7 @@ import info from './modules/info'
 import marker from './modules/marker'
 import customer from './modules/customer'
 import potentialCustomer from './modules/potentialCustomer'
+import directCustomer from './modules/directCustomer'
 const NotFound = () => import('../view/404.vue')
 const Workbench = () => import('../view/Workbench.vue')
 
@@ -36,7 +37,8 @@ const routers = [
       ...info,
       ...marker,
       ...customer,
-      ...potentialCustomer
+      ...potentialCustomer,
+      ...directCustomer
     ]
   }
 ]

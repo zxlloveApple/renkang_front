@@ -163,14 +163,14 @@ export default {
       }
     },
     delUser (row) {
-      this.$confirm('确定删除该用户吗？','提示',{
+      this.$confirm('确定删除该用户吗？', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
         let url = '/base/sysUser/addUser'
         row.status = false
-        this.$http.postJson(url,row,res => {
+        this.$http.postJson(url, row, res => {
           this.$message.success(res.message)
           this.loadUsers()
         })

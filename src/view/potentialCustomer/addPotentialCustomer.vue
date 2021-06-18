@@ -13,10 +13,6 @@
             </el-form-item>
           </el-col>
         </el-row>
-<!--        <el-form-item label="省份" prop="provinceCode">-->
-<!--          <el-input size="small" v-model="customerInfo.provinceCode" >浙江省</el-input>-->
-<!--        </el-form-item>-->
-
         <el-form-item label="区域" required  prop="cityId">
           <el-select size="small" placeholder="请选择"
                      required

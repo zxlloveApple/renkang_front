@@ -44,7 +44,7 @@ export default {
         margin 0 auto
         padding-top 10px;
         box-sizing border-box
-      }
+     }
     }
   }
 </style>
